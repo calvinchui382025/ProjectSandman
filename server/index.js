@@ -14,7 +14,7 @@ app.use((_, res, next) => {
 //======================================================
 app.get("/api", (req, res) => {
   console.log('/api hit!'); // test
-  res.json({ message: "Hello from server!" });
+  res.json({ message: "Successfully hit server!" });
 });
 //======================================================
 app.listen(PORT, () => {
