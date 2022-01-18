@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import { url } from '../../constants/URLS';
 import { StyleSheet, ScrollView, RefreshControl } from 'react-native';
 import { Text } from '../../components/Themed';
 import { RootTabScreenProps } from '../../types';
@@ -15,21 +13,6 @@ export default function Stats({ navigation }: RootTabScreenProps<'TabOne'>) {
   const [randomValue3, setRandomValue3] = useState( generateRandomInteger() );
   const [count, setCount] = useState(1);
 
-  const testFetch = async () => {
-    const configObj = {
-      method: 'get',
-      url: `${url}/api`,
-    };
-    console.log({configObj})
-    try {
-      // @ts-ignore
-      const response = await axios(configObj);
-      console.log(response);
-    } catch (err) {
-      console.log(err);
-    }
-  }
-
   useEffect(() => {
     if (count < 5) {
       setRandomValue(generateRandomInteger());
@@ -43,7 +26,6 @@ export default function Stats({ navigation }: RootTabScreenProps<'TabOne'>) {
 
   const onRefresh = () => {
     setRefreshing(true);
-    testFetch();
     setCount(0);
     setRefreshing(false);
   }
@@ -66,10 +48,12 @@ export default function Stats({ navigation }: RootTabScreenProps<'TabOne'>) {
   return (
     <ScrollView 
       contentContainerStyle={styles.container}
-      refreshControl={<RefreshControl
-        refreshing={refreshing}
-        onRefresh={onRefresh}
-      />}
+      refreshControl={
+        <RefreshControl
+          refreshing={refreshing}
+          onRefresh={onRefresh}
+        />
+      }
       >
       <Text>
         This is the stats screen
