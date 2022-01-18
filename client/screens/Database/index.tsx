@@ -30,6 +30,7 @@ export default function Database({ navigation }: RootTabScreenProps<'TabFour'>) 
       )
     } catch (err) {
       console.log(err);
+      Alert.alert('Fetch request failed, check logs')
     }
   }
 
