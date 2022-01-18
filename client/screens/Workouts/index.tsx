@@ -3,7 +3,7 @@ import { StyleSheet, ScrollView, RefreshControl } from 'react-native';
 import { Text } from '../../components/Themed';
 import { RootTabScreenProps } from '../../types';
 import { CircularProgressWithChild } from 'react-native-circular-progress-indicator';
-import { generateRandomInteger } from '../../utilities';
+import { generateRandomInteger } from '../../constants/utilities';
 //======================================================
 export default function Workouts({ navigation }: RootTabScreenProps<'TabTwo'>) {
   const [refreshing, setRefreshing] = useState(false);

@@ -1,0 +1,15 @@
+{
+  "files.exclude": {
+    "**/.expo": true,
+    "**/.expo-shared": true,
+    "**/.vscode": true,
+    "**/babel.config.js": true,
+    "**/mock.js": true,
+    "**/tsconfig.json": true,
+    "**/yarn-error.log": true,
+    "client/node_modules/": true,
+    "client/yarn.lock": true,
+    "server/node_modules/": true,
+    "server/yarn.lock": true
+  }
+}

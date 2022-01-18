@@ -3,7 +3,7 @@ import { StyleSheet, ScrollView, RefreshControl } from 'react-native';
 import { Text } from '../../components/Themed';
 import { RootTabScreenProps } from '../../types';
 import CircularProgress from 'react-native-circular-progress-indicator';
-import { generateRandomInteger, wait } from '../../utilities';
+import { generateRandomInteger, wait } from '../../constants/utilities';
 //======================================================
 export default function Stats({ navigation }: RootTabScreenProps<'TabOne'>) {
 
