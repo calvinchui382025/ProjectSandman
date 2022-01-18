@@ -14,11 +14,13 @@ import Stats from '../screens/Stats';
 import Workouts from '../screens/Workouts';
 import Forum from '../screens/Forum';
 import Database from '../screens/Database';
+import Tester from '../screens/Tester';
 import LinkingConfiguration from './LinkingConfiguration';
 
 import Ionicons from 'react-native-vector-icons/Ionicons'
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 //======================================================
@@ -58,7 +60,7 @@ function RootNavigator() {
               color={color}
               size={iconSize}
             />
-          )
+          ),
         }}
       />
       <Tab.Screen 
@@ -74,7 +76,7 @@ function RootNavigator() {
               color={color} 
               size={iconSize} 
             />
-          )
+          ),
         }}
       />
       <Tab.Screen 
@@ -90,7 +92,7 @@ function RootNavigator() {
               color={color} 
               size={iconSize} 
             />
-          )
+          ),
         }}
       />
       <Tab.Screen 
@@ -106,7 +108,23 @@ function RootNavigator() {
               size={iconSize} 
               color={color} 
             />
-          )
+          ),
+        }}
+      />
+      <Tab.Screen 
+        name="Tester" 
+        component={Tester}
+        options={{
+          title: 'Tester',
+          tabBarLabel: 'Tester',
+          tabBarColor: '#ffc40c',
+          tabBarIcon: ({ color }) => (
+            <MaterialIcons 
+              name={'science'} 
+              size={iconSize} 
+              color={color} 
+            />
+          ),
         }}
       />
     </Tab.Navigator>
