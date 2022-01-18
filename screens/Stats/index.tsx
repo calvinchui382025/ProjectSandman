@@ -1,32 +1,19 @@
 import React, { useState } from 'react';
-import { StyleSheet, RefreshControl, ScrollView } from 'react-native';
-import { Text, View } from '../../components/Themed';
+import { StyleSheet, ScrollView, RefreshControl } from 'react-native';
+import { Text } from '../../components/Themed';
 import { RootTabScreenProps } from '../../types';
 import CircularProgress from 'react-native-circular-progress-indicator';
-//======================================================
-const generateRandomInteger = () => {
-  const max = 100;
-  const min = 0;
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-}
+import { generateRandomInteger } from '../../utilities';
 //======================================================
 export default function Stats({ navigation }: RootTabScreenProps<'TabOne'>) {
 
   const [refreshing, setRefreshing] = useState(false);
-  const [randomValue, setRandomValue] = useState(generateRandomInteger())
-
-  // const onRefresh = useCallback(() => {
-  //   setRefreshing(true);
-  // });
-
-  const wait = (timeout:number) => {
-    return new Promise(resolve => setTimeout(resolve, timeout));
-  }
+  const [randomValue, setRandomValue] = useState( generateRandomInteger() );
 
   const onRefresh = () => {
     setRefreshing(true);
     setRandomValue(generateRandomInteger());
-    wait(2000).then(() => setRefreshing(false));
+    setRefreshing(false);
   }
 
   return (
