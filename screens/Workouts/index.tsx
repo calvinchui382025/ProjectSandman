@@ -1,9 +1,10 @@
 import { StyleSheet } from 'react-native';
 
-import EditScreenInfo from '../../components/EditScreenInfo';
+// import EditScreenInfo from '../../components/EditScreenInfo';
 import { Text, View } from '../../components/Themed';
-
-export default function Workouts() {
+import { RootTabScreenProps } from '../../types';
+//======================================================
+export default function Workouts({ navigation }: RootTabScreenProps<'TabTwo'>) {
   return (
     <View style={styles.container}>
       {/* <Text style={styles.title}>Tab Two</Text> */}
