@@ -1,6 +1,4 @@
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
-import rootReducer from './store/reducers';
 
 import { StatusBar } from 'expo-status-bar';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
@@ -8,12 +6,13 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import useCachedResources from './hooks/useCachedResources';
 import useColorScheme from './hooks/useColorScheme';
 import Navigation from './navigation';
+
+import { store } from './store';
+import Toast from 'react-native-toast-message';
 //======================================================
 export default function App() {
   const isLoadingComplete = useCachedResources();
   const colorScheme = useColorScheme();
-
-  const store = createStore(rootReducer)
 
   if (!isLoadingComplete) {
     return null;
@@ -27,6 +26,7 @@ export default function App() {
             colorScheme={colorScheme} 
           />
           <StatusBar />
+          <Toast />
         </SafeAreaProvider>
       </Provider>
     );
