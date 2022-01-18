@@ -42,19 +42,19 @@ function RootNavigator() {
       initialRouteName='Stats'
       backBehavior='order'
       shifting
-      // activeColor='orange'
-      // inactiveColor='white'
+      activeColor={Colors[colorScheme].tabIconSelected}
+      inactiveColor={Colors[colorScheme].tabIconDefault}
     >
       <Tab.Screen 
         name="Stats" 
         component={Stats}
         options={{
           tabBarLabel: 'Stats',
-          tabBarColor: 'turquoise',
+          tabBarColor: '#fbec5d',
           tabBarIcon: ({ color }) => (
             <Ionicons
               name='stats-chart'
-              color={Colors[colorScheme].background}
+              color={color}
               size={iconSize}
             />
           )
@@ -65,11 +65,11 @@ function RootNavigator() {
         component={Workouts}
         options={{
           tabBarLabel: 'Workouts',
-          tabBarColor: 'darkturquoise',
+          tabBarColor: '#ffe135',
           tabBarIcon: ({ color }) => (
             <FontAwesome5 
               name={'dumbbell'} 
-              color={Colors[colorScheme].background} 
+              color={color} 
               size={iconSize} 
             />
           )
@@ -80,11 +80,11 @@ function RootNavigator() {
         component={Forum}
         options={{
           tabBarLabel: 'Forum',
-          tabBarColor: 'lightseagreen',
+          tabBarColor: '#ffd800',
           tabBarIcon: ({ color }) => (
             <MaterialCommunityIcons 
               name={'forum'} 
-              color={Colors[colorScheme].background} 
+              color={color} 
               size={iconSize} 
             />
           )
@@ -95,12 +95,12 @@ function RootNavigator() {
         component={Database}
         options={{
           tabBarLabel: 'Database',
-          tabBarColor: 'teal',
+          tabBarColor: '#ffc40c',
           tabBarIcon: ({ color }) => (
             <FontAwesome5 
               name={'database'} 
               size={iconSize} 
-              color={Colors[colorScheme].background} 
+              color={color} 
             />
           )
         }}
