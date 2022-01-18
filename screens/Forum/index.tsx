@@ -4,14 +4,14 @@ import EditScreenInfo from '../../components/EditScreenInfo';
 import { Text, View } from '../../components/Themed';
 import { RootTabScreenProps } from '../../types';
 
-export default function Learn({ navigation }: RootTabScreenProps<'TabFour'>) {
+export default function Forum({ navigation }: RootTabScreenProps<'TabThree'>) {
   return (
     <View style={styles.container}>
-      {/* <Text style={styles.title}>Tab Four</Text> */}
+      {/* <Text style={styles.title}>Tab Three</Text> */}
       {/* <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" /> */}
-      {/* <EditScreenInfo path="/screens/TabFourScreen.tsx" /> */}
+      {/* <EditScreenInfo path="/screens/TabThreeScreen.tsx" /> */}
       <Text>
-        This is the learn screen
+        This is the forum screen
       </Text>
     </View>
   );

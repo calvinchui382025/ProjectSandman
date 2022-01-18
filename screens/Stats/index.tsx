@@ -4,7 +4,7 @@ import { StyleSheet } from 'react-native';
 import { Text, View } from '../../components/Themed';
 import { RootTabScreenProps } from '../../types';
 //======================================================
-export default function Home({ navigation }: RootTabScreenProps<'TabOne'>) {
+export default function Stats({ navigation }: RootTabScreenProps<'TabOne'>) {
   return (
     <View style={styles.container}>
       {/* <Text style={styles.title}>
@@ -17,7 +17,7 @@ export default function Home({ navigation }: RootTabScreenProps<'TabOne'>) {
       /> */}
       {/* <EditScreenInfo path="/screens/TabOneScreen.tsx" /> */}
       <Text>
-        This is the home screen
+        This is the stats screen
       </Text>
     </View>
   );

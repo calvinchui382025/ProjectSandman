@@ -4,14 +4,14 @@ import EditScreenInfo from '../../components/EditScreenInfo';
 import { Text, View } from '../../components/Themed';
 import { RootTabScreenProps } from '../../types';
 
-export default function Diet({ navigation }: RootTabScreenProps<'TabThree'>) {
+export default function Database({ navigation }: RootTabScreenProps<'TabFour'>) {
   return (
     <View style={styles.container}>
-      {/* <Text style={styles.title}>Tab Three</Text> */}
+      {/* <Text style={styles.title}>Tab Four</Text> */}
       {/* <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" /> */}
-      {/* <EditScreenInfo path="/screens/TabThreeScreen.tsx" /> */}
+      {/* <EditScreenInfo path="/screens/TabFourScreen.tsx" /> */}
       <Text>
-        This is the diet screen
+        This is the database screen
       </Text>
     </View>
   );
