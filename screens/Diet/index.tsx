@@ -10,6 +10,9 @@ export default function Diet({ navigation }: RootTabScreenProps<'TabThree'>) {
       {/* <Text style={styles.title}>Tab Three</Text> */}
       {/* <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" /> */}
       {/* <EditScreenInfo path="/screens/TabThreeScreen.tsx" /> */}
+      <Text>
+        This is the diet screen
+      </Text>
     </View>
   );
 }

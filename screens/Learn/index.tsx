@@ -10,6 +10,9 @@ export default function Learn({ navigation }: RootTabScreenProps<'TabFour'>) {
       {/* <Text style={styles.title}>Tab Four</Text> */}
       {/* <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" /> */}
       {/* <EditScreenInfo path="/screens/TabFourScreen.tsx" /> */}
+      <Text>
+        This is the learn screen
+      </Text>
     </View>
   );
 }
