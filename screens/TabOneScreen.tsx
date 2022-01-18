@@ -14,7 +14,6 @@ export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'
         style={styles.separator}
         lightColor="#eee"
         darkColor="rgba(255,255,255,0.1)" 
-        // darkColor="#eee"
       />
       <EditScreenInfo path="/screens/TabOneScreen.tsx" />
     </View>

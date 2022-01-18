@@ -21,6 +21,10 @@ import TabFourScreen from '../screens/TabFourScreen';
 import { RootStackParamList, RootTabParamList, RootTabScreenProps } from '../types';
 import LinkingConfiguration from './LinkingConfiguration';
 
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+
 export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeName }) {
   return (
     <NavigationContainer
@@ -54,6 +58,7 @@ function RootNavigator() {
  * https://reactnavigation.org/docs/bottom-tab-navigator
  */
 const BottomTab = createBottomTabNavigator<RootTabParamList>();
+const iconSize = 22;
 
 function BottomTabNavigator() {
   const colorScheme = useColorScheme();
@@ -69,7 +74,15 @@ function BottomTabNavigator() {
         component={TabOneScreen}
         options={({ navigation }: RootTabScreenProps<'TabOne'>) => ({
           title: 'Home',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+          tabBarIcon: ({ color }) => {
+            return (
+              <MaterialIcons 
+                name={'home'} 
+                size={iconSize} 
+                color={color} 
+              />
+            )
+          },
           headerRight: () => (
             <Pressable
               onPress={() => navigation.navigate('Modal')}
@@ -91,7 +104,13 @@ function BottomTabNavigator() {
         component={TabTwoScreen}
         options={{
           title: 'Workouts',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+          tabBarIcon: ({ color }) => (
+            <FontAwesome5 
+              name={'dumbbell'} 
+              size={iconSize} 
+              color={color} 
+            />
+          ),
         }}
       />
       <BottomTab.Screen
@@ -99,7 +118,13 @@ function BottomTabNavigator() {
         component={TabThreeScreen}
         options={{
           title: 'Diet',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+          tabBarIcon: ({ color }) => (
+            <MaterialCommunityIcons 
+              name={'silverware-fork-knife'} 
+              size={iconSize} 
+              color={color} 
+            />
+          ),
         }}
       />
       <BottomTab.Screen
@@ -107,7 +132,13 @@ function BottomTabNavigator() {
         component={TabFourScreen}
         options={{
           title: 'Learn',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+          tabBarIcon: ({ color }) => (
+            <MaterialIcons 
+              name={'library-books'} 
+              size={iconSize} 
+              color={color} 
+            />
+          ),
         }}
       />
     </BottomTab.Navigator>
