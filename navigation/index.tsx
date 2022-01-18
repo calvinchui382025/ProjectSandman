@@ -5,7 +5,7 @@
  */
 import { NavigationContainer, DefaultTheme, DarkTheme } from '@react-navigation/native';
 import * as React from 'react';
-import { ColorSchemeName, Pressable } from 'react-native';
+import { ColorSchemeName } from 'react-native';
 
 import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
@@ -49,6 +49,7 @@ function RootNavigator() {
         name="Stats" 
         component={Stats}
         options={{
+          title: 'Stats',
           tabBarLabel: 'Stats',
           tabBarColor: '#fbec5d',
           tabBarIcon: ({ color }) => (
@@ -64,6 +65,7 @@ function RootNavigator() {
         name="Workouts" 
         component={Workouts}
         options={{
+          title: 'Workouts',
           tabBarLabel: 'Workouts',
           tabBarColor: '#ffe135',
           tabBarIcon: ({ color }) => (
@@ -79,6 +81,7 @@ function RootNavigator() {
         name="Forum" 
         component={Forum}
         options={{
+          title: 'Forum',
           tabBarLabel: 'Forum',
           tabBarColor: '#ffd800',
           tabBarIcon: ({ color }) => (
@@ -94,6 +97,7 @@ function RootNavigator() {
         name="Database" 
         component={Database}
         options={{
+          title: 'Database',
           tabBarLabel: 'Database',
           tabBarColor: '#ffc40c',
           tabBarIcon: ({ color }) => (
