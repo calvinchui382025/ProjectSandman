@@ -1,0 +1,23 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "Project Sandman API",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/snyperifle/ProjectSandman.git"
+  },
+  "author": "Calvin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/snyperifle/ProjectSandman/issues"
+  },
+  "homepage": "https://github.com/snyperifle/ProjectSandman#readme",
+  "dependencies": {
+    "express": "^4.17.2",
+    "nodemon": "^2.0.15"
+  }
+}
