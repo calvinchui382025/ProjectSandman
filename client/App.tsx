@@ -1,3 +1,7 @@
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import rootReducer from './store/reducers';
+
 import { StatusBar } from 'expo-status-bar';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
@@ -9,16 +13,22 @@ export default function App() {
   const isLoadingComplete = useCachedResources();
   const colorScheme = useColorScheme();
 
+  const store = createStore(rootReducer)
+
   if (!isLoadingComplete) {
     return null;
   } else {
     return (
-      <SafeAreaProvider>
-        <Navigation
-          colorScheme={colorScheme} 
-        />
-        <StatusBar />
-      </SafeAreaProvider>
+      <Provider
+        store={store}
+      >
+        <SafeAreaProvider>
+          <Navigation
+            colorScheme={colorScheme} 
+          />
+          <StatusBar />
+        </SafeAreaProvider>
+      </Provider>
     );
   }
 }

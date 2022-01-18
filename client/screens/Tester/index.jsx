@@ -1,12 +1,18 @@
 import React, { useState, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { actions as TesterScreenActions } from './reducer';
+import * as TesterScreenSelectors from './selectors';
+
 import { Icon } from 'react-native-elements';
 import { StyleSheet, ScrollView, RefreshControl, View } from 'react-native';
 import { Text } from '../../components/Themed';
 //======================================================
 export default function Tester({ navigation }) {
 
+  const dispatch = useDispatch();
+  const counter = useSelector(TesterScreenSelectors.getCounter);
+
   const [refreshing, setRefreshing] = useState(false);
-  const [count, setCount] = useState(0);
 
   const onRefresh = () => {
     setRefreshing(true);
@@ -14,11 +20,11 @@ export default function Tester({ navigation }) {
   }
 
   const addCounter = () => {
-    setCount(count + 1);
+    dispatch(TesterScreenActions.setCounter(counter + 1));
   }
 
   const subtractCounter = () => {
-    setCount(count - 1);
+    dispatch(TesterScreenActions.setCounter(counter - 1));
   }
 
   useEffect(() => {
@@ -52,7 +58,7 @@ export default function Tester({ navigation }) {
         />
         <Text
           style={styles.counter}
-        >{count}</Text>
+        >{counter}</Text>
         <Icon
           raised
           type='material'
