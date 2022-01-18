@@ -21,7 +21,6 @@ export default function*(): any {
   try {
     const uiCounterValue = yield select(TesterScreenSelectors.getCounter);
     const dbCounterValue = yield call(asyncSetCounter, uiCounterValue);
-    console.log(dbCounterValue);
     if (dbCounterValue) {
       yield put(actions.setDbCounter(dbCounterValue));
     }
